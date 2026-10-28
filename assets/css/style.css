@@ -258,6 +258,20 @@ section { position: relative; }
 .kevin-cat { position: relative; z-index: 1; width: 170px; aspect-ratio: 283 / 591; margin-top: 44px; }
 .kevin-cat img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .45s ease, transform .45s cubic-bezier(.3,1.6,.5,1); transform: translateY(6px); }
 .kevin-cat img.on { opacity: 1; transform: none; }
+/* Kevin is never quite still: he breathes, sways a little, nods at his own remarks and hops when he gets a new hat. */
+.kevin-cat { transform-origin: 50% 96%; animation: kbreathe 3.8s ease-in-out infinite, ksway 9s ease-in-out infinite, klook 11s ease-in-out infinite; }
+.kevin-cat.react { animation: kbreathe 3.8s ease-in-out infinite, ksway 9s ease-in-out infinite, klook 11s ease-in-out infinite, knod .7s ease-out 1; }
+.kevin-cat.pop { animation: kbreathe 3.8s ease-in-out infinite, ksway 9s ease-in-out infinite, klook 11s ease-in-out infinite, khop .7s cubic-bezier(.3,1.4,.5,1) 1; }
+@keyframes kbreathe { 0%, 100% { scale: 1 1; } 50% { scale: 1.012 1.026; } }
+@keyframes ksway { 0%, 100% { rotate: -.7deg; } 50% { rotate: .7deg; } }
+@keyframes klook { 0%, 62%, 100% { translate: 0 0; } 68%, 78% { translate: -5px 0; } 84%, 94% { translate: 5px 0; } }
+@keyframes knod { 0% { translate: 0 0; } 30% { translate: 0 5px; } 100% { translate: 0 0; } }
+@keyframes khop { 0% { translate: 0 0; } 35% { translate: 0 -22px; } 70% { translate: 0 2px; } 100% { translate: 0 0; } }
+.kevin-stage::after { animation: kshadow 3.8s ease-in-out infinite; }
+@keyframes kshadow { 0%, 100% { scale: 1 1; opacity: 1; } 50% { scale: 1.05 1; opacity: .85; } }
+.bubble:not(.swap) { animation: bpop .4s cubic-bezier(.3,1.5,.5,1); }
+@keyframes bpop { from { transform: scale(.94); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .kevin-cat, .kevin-cat.react, .kevin-cat.pop, .kevin-stage::after, .bubble:not(.swap) { animation: none; } }
 .bubble { position: absolute; z-index: 2; top: 28px; left: 50%; translate: -50% 0; width: min(86%, 360px); padding: 14px 18px; border-radius: 16px; background: #f4ecdc; color: #20180f;
   font-weight: 700; font-size: 1.12rem; line-height: 1.35; text-align: center; box-shadow: 0 12px 30px rgba(0,0,0,.45); transition: opacity .35s, transform .35s; }
 .bubble::after { content: ""; position: absolute; bottom: -10px; left: 50%; translate: -50% 0; border: 10px solid transparent; border-bottom: 0; border-top-color: #f4ecdc; }

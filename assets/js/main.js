@@ -221,11 +221,16 @@
   const bubble = document.getElementById("kevin-quote");
   const cat = document.getElementById("kevin-cat");
   const hatItems = [...document.querySelectorAll("#hat-list li")];
+  QUOTES.sort(() => Math.random() - 0.5);               // a fresh order on every visit; they loop by themselves
   let q = 0, hat = 0, autoTimer = 0;
+  const react = () => {                                  // a small nod each time he says something
+    if (!cat || reduced) return;
+    cat.classList.remove("react"); void cat.offsetWidth; cat.classList.add("react");
+  };
   const say = (i) => {
     if (!bubble) return;
     q = (i + QUOTES.length) % QUOTES.length;
-    const set = () => { bubble.innerHTML = `${QUOTES[q]}<cite>Kevin</cite>`; bubble.classList.remove("swap"); };
+    const set = () => { bubble.innerHTML = `${QUOTES[q]}<cite>Kevin</cite>`; bubble.classList.remove("swap"); react(); };
     if (reduced) return set();
     bubble.classList.add("swap"); setTimeout(set, 300);
   };
@@ -233,10 +238,10 @@
     if (!cat) return;
     const imgs = cat.querySelectorAll("img");
     hat = (h + imgs.length) % imgs.length;
+    if (!reduced) { cat.classList.remove("pop"); void cat.offsetWidth; cat.classList.add("pop"); }
     imgs.forEach((im, i) => im.classList.toggle("on", i === hat));
     hatItems.forEach((li) => li.classList.toggle("on", Number(li.dataset.hat) === hat));
   };
-  document.getElementById("kevin-say")?.addEventListener("click", () => { say(q + 1); restart(); });
   document.getElementById("kevin-hat")?.addEventListener("click", () => { wear(hat + 1); restart(); });
   hatItems.forEach((li) => {
     li.tabIndex = 0; li.setAttribute("role", "button");
@@ -252,10 +257,9 @@
   function restart() {
     clearInterval(autoTimer);
     if (reduced) return;
-    autoTimer = setInterval(() => { if (kevinVisible && !document.hidden) { say(q + 1); if (q % 2 === 0) wear(hat + 1); } }, 4200);
+    autoTimer = setInterval(() => { if (kevinVisible && !document.hidden) { say(q + 1); if (q % 3 === 0) wear(hat + 1); } }, 6500);
   }
   if (bubble) bubble.setAttribute("aria-live", "off");   // automatic changes are not announced; button presses are
-  document.getElementById("kevin-say")?.addEventListener("click", () => bubble.setAttribute("aria-live", "polite"), { once: true });
   restart();
 
   // ---- Screenshot carousel buttons
