@@ -86,7 +86,7 @@
         sprite.style.cssText = `--n:${m.n};--dur:${m.dur}s;aspect-ratio:${m.w} / ${m.h};height:${Math.round(m.h * k)}px;background-image:url(${m.img})`;
         nameEl.textContent = m.name; descEl.textContent = m.desc;
         whereEl.textContent = `${m.region}, ${m.floors.toLowerCase()}`;
-        countEl.textContent = `${pos + 1} of ${list.length} on shift`;
+        countEl.textContent = "";                                  // no counting the residents
         spot.classList.remove("swap");
       };
       if (reduced) return apply();
