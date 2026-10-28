@@ -63,15 +63,66 @@
     });
   }
 
-  // ---- Class cards: a tap swings the weapon on touch screens
-  document.querySelectorAll(".class-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      if (fine) return;
-      card.classList.add("attacking");
-      clearTimeout(card._t);
-      card._t = setTimeout(() => card.classList.remove("attacking"), 1400);
-    });
-  });
+  // ---- Monster of the moment: one resident on duty at a time, a new random one every 12 seconds
+  (function () {
+    const dataEl = document.getElementById("monster-data");
+    const spot = document.getElementById("spot");
+    if (!dataEl || !spot) return;
+    const list = JSON.parse(dataEl.textContent);
+    const sprite = document.getElementById("spot-sprite");
+    const nameEl = document.getElementById("spot-name"), descEl = document.getElementById("spot-desc"), whereEl = document.getElementById("spot-where");
+    const countEl = document.getElementById("spot-count"), bar = document.getElementById("spot-bar");
+    const SHOW_MS = 12000;
+    let order = [], pos = -1, timer = 0, started = 0, left = SHOW_MS, held = false, visible = false;
+    const shuffle = () => {              // a fresh shuffle each lap, and the same monster never shows twice in a row
+      const last = order[order.length - 1];
+      order = list.map((_, i) => i).sort(() => Math.random() - 0.5);
+      if (order[0] === last) order.push(order.shift());
+    };
+    const show = (i) => {
+      const m = list[i];
+      const apply = () => {
+        const k = Math.min(1.9, 230 / m.h);                       // about 230 px tall on screen, never more than 1.9x
+        sprite.style.cssText = `--n:${m.n};--dur:${m.dur}s;aspect-ratio:${m.w} / ${m.h};height:${Math.round(m.h * k)}px;background-image:url(${m.img})`;
+        nameEl.textContent = m.name; descEl.textContent = m.desc;
+        whereEl.textContent = `${m.region}, ${m.floors.toLowerCase()}`;
+        countEl.textContent = `${pos + 1} of ${list.length} on shift`;
+        spot.classList.remove("swap");
+      };
+      if (reduced) return apply();
+      spot.classList.add("swap"); setTimeout(apply, 260);
+    };
+    const go = (step) => {
+      if (!order.length) shuffle();
+      pos += step;
+      if (pos >= order.length) { shuffle(); pos = 0; }
+      if (pos < 0) pos = order.length - 1;
+      show(order[pos]); left = SHOW_MS; started = performance.now(); tick();
+    };
+    const tick = () => {
+      clearTimeout(timer); cancelAnimationFrame(spot._raf);
+      const frame = () => {
+        const elapsed = performance.now() - started, f = Math.min(1, elapsed / left);
+        bar.style.transform = `scaleX(${f})`;
+        if (f >= 1) { go(1); return; }
+        spot._raf = requestAnimationFrame(frame);
+      };
+      if (!reduced && visible && !held) { started = performance.now(); spot._raf = requestAnimationFrame(frame); }
+    };
+    const pause = (v) => {
+      if (v === held) return;
+      if (v) { left = Math.max(1000, left - (performance.now() - started)); cancelAnimationFrame(spot._raf); }
+      held = v; if (!v) { started = performance.now(); tick(); }
+    };
+    document.getElementById("spot-next").addEventListener("click", () => go(1));
+    document.getElementById("spot-prev").addEventListener("click", () => go(-1));
+    spot.addEventListener("pointerenter", () => { if (fine) pause(true); });
+    spot.addEventListener("pointerleave", () => pause(false));
+    spot.addEventListener("focusin", () => pause(true));
+    spot.addEventListener("focusout", () => pause(false));
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; spot.classList.toggle("paused", !visible); if (visible) { started = performance.now(); tick(); } else cancelAnimationFrame(spot._raf); }).observe(spot);
+    go(1);
+  })();
 
   // ---- Hero: parallax and embers
   const hero = document.querySelector(".hero");

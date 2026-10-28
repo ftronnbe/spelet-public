@@ -363,3 +363,24 @@ footer .made { font-family: var(--head); color: var(--gold); font-size: 1.25rem;
   [data-reveal] { opacity: 1; transform: none; }
   .card { transform: none !important; }
 }
+
+/* ---------- Monster of the moment ---------- */
+.spot { display: grid; grid-template-columns: minmax(0, 420px) 1fr; gap: clamp(20px, 4vw, 56px); align-items: center; max-width: 980px; margin: 8px auto 0; transition: opacity .26s ease, transform .26s ease; }
+.spot.swap .spot-stage .sprite, .spot.swap .spot-body > *:not(.spot-controls):not(.spot-bar) { opacity: 0; transform: translateY(8px); }
+.spot-stage { position: relative; min-height: 330px; display: grid; place-items: end center; padding-bottom: 36px; border-radius: 28px; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 70%, rgba(140, 90, 255, .20), rgba(20, 16, 28, .0) 62%), linear-gradient(180deg, #17121e, #0f0c14);
+  box-shadow: 0 0 0 1px var(--line), 0 30px 70px rgba(0,0,0,.55); }
+.spot-glow { position: absolute; inset: auto 10% 8% 10%; height: 40%; background: radial-gradient(ellipse at 50% 100%, rgba(255, 150, 60, .28), transparent 70%); filter: blur(10px); }
+.spot-shadow { position: absolute; bottom: 28px; left: 50%; width: 150px; height: 24px; translate: -50% 0; border-radius: 50%; background: rgba(0,0,0,.55); filter: blur(7px); }
+.spot-stage .sprite { position: relative; z-index: 1; transition: opacity .26s ease, transform .26s ease; max-width: 90%; }
+.spot-body { min-width: 0; }
+.spot-body > * { transition: opacity .26s ease, transform .26s ease; }
+.spot-where { margin: 0 0 8px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; font-size: .8rem; color: var(--torch); }
+.spot-name { margin: 0 0 12px; font-family: var(--head); font-weight: 400; font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1; color: var(--gold-hi); }
+.spot-desc { margin: 0; font-size: clamp(1.15rem, 2.6vw, 1.45rem); line-height: 1.5; color: var(--text); max-width: 34ch; min-height: 4.6em; }
+.spot-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 22px; }
+.spot-count { color: var(--dim); font-size: .92rem; letter-spacing: .06em; }
+.spot-bar { margin-top: 18px; height: 3px; border-radius: 3px; background: rgba(255,255,255,.1); overflow: hidden; max-width: 340px; }
+.spot-bar i { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, var(--torch), var(--gold)); transform: scaleX(0); transform-origin: left; }
+@media (max-width: 760px) { .spot { grid-template-columns: 1fr; text-align: center; } .spot-stage { min-height: 300px; } .spot-desc { margin-inline: auto; min-height: 0; } .spot-controls, .spot-bar { justify-content: center; margin-inline: auto; } }
+@media (prefers-reduced-motion: reduce) { .spot, .spot-body > *, .spot-stage .sprite { transition: none; } }
