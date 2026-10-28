@@ -63,6 +63,13 @@ p { margin: 0 0 1em; }
 }
 .nav.scrolled, .nav.solid { background: rgba(12, 10, 15, .82); backdrop-filter: blur(12px) saturate(1.2); -webkit-backdrop-filter: blur(12px) saturate(1.2); box-shadow: 0 1px 0 var(--line); }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--gold); font-family: var(--display); font-weight: 900; font-size: 1.05rem; letter-spacing: .04em; white-space: nowrap; }
+.brand-logo { height: 46px; width: auto; overflow: visible; margin-top: 6px; }
+.brand-logo .tt { font-family: var(--display); font-weight: 900; font-size: 108px; letter-spacing: 4px; }
+.brand-logo .scrawl, .brand-logo .scribe { fill: none; stroke: #e5372a; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.brand-logo .scrawl { animation: ink .5s ease-out .9s forwards; }
+.brand-logo .scribe { stroke: #ff5a48; animation: ink .45s ease-out 1.4s forwards; }
+.brand-logo .scribe.tick { animation-delay: 1.3s; animation-duration: .25s; }
+@media (prefers-reduced-motion: reduce) { .brand-logo .scrawl, .brand-logo .scribe { animation: none; stroke-dashoffset: 0; } }
 .brand img { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 0 0 1px var(--line), 0 4px 14px rgba(0,0,0,.5); }
 .nav .links { display: flex; gap: 4px; margin-left: auto; }
 .nav .links a { color: var(--muted); text-decoration: none; font-weight: 700; font-size: 1rem; padding: 8px 12px; border-radius: 999px; transition: color .2s, background .2s; }
