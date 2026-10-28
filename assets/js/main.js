@@ -82,7 +82,7 @@
     const show = (i) => {
       const m = list[i];
       const apply = () => {
-        const k = Math.min(1.9, 230 / m.h);                       // about 230 px tall on screen, never more than 1.9x
+        const k = 1.05;                                          // about native pixel size: the sprites are small, so showing them small keeps them crisp
         sprite.style.cssText = `--n:${m.n};--dur:${m.dur}s;aspect-ratio:${m.w} / ${m.h};height:${Math.round(m.h * k)}px;background-image:url(${m.img})`;
         nameEl.textContent = m.name; descEl.textContent = m.desc;
         whereEl.textContent = `${m.region}, ${m.floors.toLowerCase()}`;
