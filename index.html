@@ -34,7 +34,7 @@
   <a class="brand" href="./"><img src="assets/img/favicon-32.png" srcset="assets/img/icon-192.png 2x" width="34" height="34" alt="">Deep Regrats</a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
   <nav class="links" id="menu" aria-label="Main">
-    <a href="#game">The game</a>
+    <a href="#bosses">Bosses</a>
     <a href="#monsters">Monsters</a>
     <a href="#classes">Classes</a>
     <a href="#kevin">Kevin</a>
@@ -56,7 +56,7 @@
 
   <div class="hero-inner">
     <p class="eyebrow">An iPhone game by Flipware</p>
-    <h1 class="title" id="title" data-text="Deep Regrats"><span>Deep Regrats</span></h1>
+    <h1 class="title" id="title" data-text="Deep Regrats" aria-label="Deep Regrats"><span aria-hidden="true">Deep Regr<i class="typo">a<b>e</b></i>ts</span></h1>
     <p class="tagline"><span class="t1">Dungeon below. Loot inside.</span><span class="t2">Also: cat.</span></p>
     <div class="hero-spacer"></div>
     <!-- The store buttons. Their links live in ONE place: assets/js/links.js -->
@@ -71,7 +71,7 @@
       </a>
     </div>
     <p class="hero-note">For iPhone. Free to play, one optional purchase to remove ads.</p>
-    <a class="scroll-cue" href="#game">Descend</a>
+    <a class="scroll-cue" href="#bosses">Descend</a>
   </div>
 </section>
 
@@ -86,46 +86,25 @@
   </div>
 </div>
 
-<section class="band" id="game" aria-labelledby="game-h">
+<section class="band" id="bosses" aria-label="The bosses">
   <div class="wrap">
-    <div class="section-head" data-reveal>
-      <p class="kicker">The game</p>
-      <h2 id="game-h">Fifteen floors of bad decisions</h2>
-      <p class="lede">Deep Regrats is an isometric action RPG for iPhone. You go down. Things try to stop you. They drop loot when they fail. It is dark, it is daft, and it does not explain its jokes.</p>
-    </div>
-    <div class="features">
-      <article class="card" data-reveal data-tilt>
-        <div class="ico"><img src="assets/img/brazier.webp" alt="" width="46" height="46" loading="lazy"></div>
-        <h3>A painted dungeon crawler</h3>
-        <p>Hand-painted chibi heroes in a dungeon that is generated anew every time. Five regions, fifteen floors, traps, chests, shrines, vaults and a treasure goblin who will not stop running.</p>
-      </article>
-      <article class="card" data-reveal data-tilt style="--delay:.08s">
-        <div class="ico"><div class="sprite" style="--n:8;width:35px;height:46px;background-image:url(assets/sprites/ghoul.webp)"></div></div>
-        <h3>Twenty painted monsters</h3>
-        <p>Every region has its own residents, each with one trick done properly: leaps, charges, splits, summons, ice lines, poison and the occasional explosion. Then there are the bosses.</p>
-        <span class="aside">They all telegraph. You will still stand in it.</span>
-      </article>
-      <article class="card" data-reveal data-tilt style="--delay:.16s">
-        <div class="ico"><img src="assets/img/emblem_sorcerer.webp" alt="" width="46" height="46" loading="lazy"></div>
-        <h3>Rule-bending skills</h3>
-        <p>Every third level the game offers three cards that break a rule, permanently. Thirty of them, with synergies such as Toxic Workplace, Cold Case and Late-Stage Capitalism.</p>
-        <span class="aside">You levelled up. The rules did not. These bend them.</span>
-      </article>
-      <article class="card" data-reveal data-tilt>
-        <div class="ico"><img src="assets/img/shrine.webp" alt="" width="46" height="46" loading="lazy"></div>
-        <h3>Floor quests and special rooms</h3>
-        <p>Free the frozen knights. Light the braziers. Carry the relic back to its altar. Find the shrine that makes you faster and a little more fragile, or the vault whose key some champion is carrying.</p>
-      </article>
-      <article class="card" data-reveal data-tilt style="--delay:.08s">
-        <div class="ico"><img src="assets/sprites/kevin_hat_6.webp" alt="" width="46" height="46" loading="lazy"></div>
-        <h3>Kevin, and his hats</h3>
-        <p>Somewhere below floor three there is a cat. He has been waiting. He is not happy about it. He joins anyway, wears hats that help you, and comments on your choices.</p>
-      </article>
-      <article class="card" data-reveal data-tilt style="--delay:.16s">
-        <div class="ico"><img src="assets/img/statue.webp" alt="" width="46" height="46" loading="lazy"></div>
-        <h3>The Town Fund</h3>
-        <p>Pour your gold into a donation box and watch the town grow: bunting, a fountain, a warehouse, and eventually a statue of you. No refunds. No randomness. Some judgement.</p>
-      </article>
+    <div class="bosses" style="margin-top:0">
+      <figure data-reveal>
+        <img src="assets/img/hollow-king.webp" width="640" height="640" alt="The Hollow King: a crowned skeleton in rusted armour with glowing red eyes." loading="lazy">
+        <figcaption>The Hollow King. He has an invoice for you.</figcaption>
+      </figure>
+      <div data-reveal style="--delay:.1s">
+        <p class="kicker">Management</p>
+        <h3 style="font-size:2.4rem;color:var(--gold)">Five bosses, one per region</h3>
+        <p class="lede">Each one has a pattern, a speech and some last words. They are all, in their own way, administrators.</p>
+        <ol class="boss-list">
+          <li><span class="fl">Floor 3</span><span><b>Sir Reginald the Eternally Late</b><span class="q">“Am I late? ...Oh.”</span></span></li>
+          <li><span class="fl">Floor 6</span><span><b>Grumblefoot, Landlord</b><span class="q">“That is the deposit. Non-refundable.”</span></span></li>
+          <li><span class="fl">Floor 9</span><span><b>Duke Gurgle, Lord of Blocked Drains</b><span class="q">“Mind the... drainage rights...”</span></span></li>
+          <li><span class="fl">Floor 12</span><span><b>Madam Shiver, Chair of the Cold Committee</b><span class="q">“This meeting is... adjourned?”</span></span></li>
+          <li><span class="fl">Floor 15</span><span><b>The Hollow King</b><span class="q">“Mind the invoice. It is on the table.”</span></span></li>
+        </ol>
+      </div>
     </div>
   </div>
 </section>
@@ -185,24 +164,6 @@
 </div>
     </div>
 
-    <div class="bosses">
-      <figure data-reveal>
-        <img src="assets/img/hollow-king.webp" width="640" height="640" alt="The Hollow King: a crowned skeleton in rusted armour with glowing red eyes." loading="lazy">
-        <figcaption>The Hollow King. He has an invoice for you.</figcaption>
-      </figure>
-      <div data-reveal style="--delay:.1s">
-        <p class="kicker">Management</p>
-        <h3 style="font-size:2.4rem;color:var(--gold)">Five bosses, one per region</h3>
-        <p class="lede">Each one has a pattern, a speech and some last words. They are all, in their own way, administrators.</p>
-        <ol class="boss-list">
-          <li><span class="fl">Floor 3</span><span><b>Sir Reginald the Eternally Late</b><span class="q">“Am I late? ...Oh.”</span></span></li>
-          <li><span class="fl">Floor 6</span><span><b>Grumblefoot, Landlord</b><span class="q">“That is the deposit. Non-refundable.”</span></span></li>
-          <li><span class="fl">Floor 9</span><span><b>Duke Gurgle, Lord of Blocked Drains</b><span class="q">“Mind the... drainage rights...”</span></span></li>
-          <li><span class="fl">Floor 12</span><span><b>Madam Shiver, Chair of the Cold Committee</b><span class="q">“This meeting is... adjourned?”</span></span></li>
-          <li><span class="fl">Floor 15</span><span><b>The Hollow King</b><span class="q">“Mind the invoice. It is on the table.”</span></span></li>
-        </ol>
-      </div>
-    </div>
   </div>
 </section>
 
