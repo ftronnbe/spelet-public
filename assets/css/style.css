@@ -174,7 +174,7 @@ a.badge:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px var(--gold), 
 }
 
 /* Kevin crossing the hero */
-.crosser { position: absolute; bottom: 7%; left: 0; width: 64px; aspect-ratio: 74 / 72; z-index: 1; pointer-events: none;
+.crosser { position: absolute; bottom: 7%; left: 0; width: 80px; aspect-ratio: 399 / 320; z-index: 1; pointer-events: none;
   animation: cross 26s linear 4s infinite; transform: translateX(-120px); }
 .crosser .sprite { width: 100%; height: 100%; }
 @keyframes cross { 0% { transform: translateX(-120px); } 40%, 100% { transform: translateX(calc(100vw + 40px)); } }
@@ -277,10 +277,10 @@ section { position: relative; }
 
 /* Kevin */
 .kevin { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(28px, 6vw, 80px); align-items: center; }
-.kevin-stage { position: relative; display: grid; place-items: center; min-height: 420px; border-radius: 28px;
+.kevin-stage { position: relative; display: grid; place-items: center; min-height: 500px; padding-bottom: 36px; border-radius: 28px;
   background: radial-gradient(55% 50% at 50% 62%, rgba(155, 109, 255, .28), transparent 70%), linear-gradient(180deg, #120f17, #1b1622); box-shadow: 0 0 0 1px var(--line-soft); overflow: hidden; }
 .kevin-stage::after { content: ""; position: absolute; bottom: 64px; left: 50%; width: 150px; height: 26px; translate: -50% 0; border-radius: 50%; background: rgba(0,0,0,.55); filter: blur(5px); }
-.kevin-cat { position: relative; z-index: 1; width: 152px; aspect-ratio: 76 / 163; margin-top: 30px; }
+.kevin-cat { position: relative; z-index: 1; width: 170px; aspect-ratio: 283 / 591; margin-top: 44px; }
 .kevin-cat img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .45s ease, transform .45s cubic-bezier(.3,1.6,.5,1); transform: translateY(6px); }
 .kevin-cat img.on { opacity: 1; transform: none; }
 .bubble { position: absolute; z-index: 2; top: 28px; left: 50%; translate: -50% 0; width: min(86%, 360px); padding: 14px 18px; border-radius: 16px; background: #f4ecdc; color: #20180f;
