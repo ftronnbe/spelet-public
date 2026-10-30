@@ -24,7 +24,7 @@
 <main class="legal" id="main">
 <h1>Integritetspolicy</h1>
 <p class="date">Gäller från 28 oktober 2026.</p>
-<p>Deep Regrats är ett spel för iPhone. Här står vad spelet sparar, vad det skickar, till vem och varför, och vad du kan göra åt det. Kort sagt: ditt spel sparas i din telefon och ingen annanstans. Apple sköter Game Center och köp. Google visar reklamen. Vi har ingen server som tar emot dina speldata, det finns inga konton och vi säljer ingenting om dig.</p>
+<p>Deep Regrats är ett spel för iPhone. Här står vad spelet sparar, vad det skickar, till vem och varför, och vad du kan göra åt det. Kort sagt: ditt spel sparas i din telefon, med en kopia i din egen iCloud. Apple sköter Game Center och köp. Google visar reklamen. Vi har ingen server som tar emot dina speldata, det finns inga konton och vi säljer ingenting om dig.</p>
 
 <nav class="toc" aria-label="Innehåll">
   <a href="#vilka-vi-ar">Vilka vi är</a>
@@ -35,7 +35,6 @@
   <a href="#game-center">Game Center</a>
   <a href="#notiser">Den dagliga påminnelsen</a>
   <a href="#felrapporter">Felrapporter (bara betaversioner)</a>
-  <a href="#anvandningsstatistik">Användningsstatistik (inte än)</a>
   <a href="#kraschrapporter">Kraschrapporter</a>
   <a href="#rattslig-grund">Rättslig grund</a>
   <a href="#hur-lange">Hur länge</a>
@@ -56,7 +55,7 @@
 <li><strong>Inställningar:</strong> musik, ljud, effektnivå och små anteckningar som spelet håller för sig själv, till exempel din dagliga svit, om det redan frågat om notiser och när det senast visade en annons (så att det kan hålla sig till högst en var femte minut).</li>
 <li><strong>Ta bort reklam:</strong> om du äger köpet. Spelet frågar Apples StoreKit i telefonen; svaret sparas inte hos oss någon annanstans.</li>
 </ul>
-<p>Allt detta ligger i spelets egen lagring i telefonen. Vi kan inte se det. Som andra appars data kan det följa med i telefonens säkerhetskopior (iCloud-säkerhetskopia eller säkerhetskopia på dator), enligt Apples villkor. Tar du bort spelet försvinner det. Spelet använder inte din position, dina kontakter, bilder, kamera eller mikrofon, och frågar inte efter något av dem.</p>
+<p>Allt detta ligger i spelets egen lagring i telefonen. En kopia av dina hjältar sparas också i din egen iCloud (iCloud-nyckelvärdeslagring, enligt Apples villkor), så att en ny telefon kan hämta dem. Den hör till ditt Apple-ID och vi kan inte se den. Stäng av den så här: iOS Inställningar → ditt namn → iCloud → Deep Regrats (eller Visa alla appar). Som andra appars data kan det följa med i telefonens säkerhetskopior (iCloud-säkerhetskopia eller säkerhetskopia på dator), enligt Apples villkor. Tar du bort spelet försvinner det. Spelet använder inte din position, dina kontakter, bilder, kamera eller mikrofon, och frågar inte efter något av dem.</p>
 
 <h2 id="vad-som-skickas">Vad som skickas, och till vem</h2>
 <ul>
@@ -85,7 +84,7 @@
 <h3>Dina val</h3>
 <ul>
 <li><strong>Samtyckesmeddelandet (EES, Storbritannien och Schweiz):</strong> första gången du är tillbaka i staden visar spelet Googles samtyckesmeddelande. Det frågar om Google får använda dina uppgifter för anpassad reklam och mätning. Du kan säga nej; spelet fungerar likadant. Anpassad reklam visas bara om du säger ja. Ändra ditt svar senare: pausmenyn → REMOVE ADS → PRIVACY CHOICES.</li>
-<li><strong>Frågan om spårning:</strong> en gång, vid samma lugna tillfälle, frågar iOS om spelet får spåra dig ("Lets ads be less random. Declining is fine."). Säger du nej delas inte reklam-id:t och annonserna anpassas inte med det. Du kan ändra dig när som helst: iOS Inställningar → Integritet och säkerhet → Spårning, eller stänga av "Tillåt appar att be om att få spåra" helt.</li>
+<li><strong>Frågan om spårning:</strong> en gång, vid samma lugna tillfälle, frågar iOS om spelet får spåra dig ("Lets Google AdMob use this device's advertising identifier to show you more relevant ads. Declining is fine: the game stays the same."). Google kan först visa en egen kort skärm som förklarar frågan. Säger du nej delas inte reklam-id:t och annonserna anpassas inte med det. Du kan ändra dig när som helst: iOS Inställningar → Integritet och säkerhet → Spårning, eller stänga av "Tillåt appar att be om att få spåra" helt.</li>
 <li><strong>Nollställ eller begränsa reklam-id:t:</strong> i nyare iOS är id:t bara nollor om du inte tillåter spårning. Att stänga av spårning för spelet i inställningarna ovan är sättet att stoppa det.</li>
 <li><strong>Ingen anpassning:</strong> säger du nej till båda ser du fortfarande annonser, men de är inte anpassade efter dig. De kan utgå från sammanhanget, till exempel spelet och din ungefärliga plats.</li>
 <li><strong>Inga helsidesannonser:</strong> köp Ta bort reklam (nedan). Den frivilliga återupplivningsannonsen finns kvar, eftersom du själv väljer den.</li>
@@ -106,7 +105,7 @@
 <p>När du har sett grottan frågar spelet en gång om det får skicka notiser. Säger du ja schemalägger det en påminnelse om dagen, i telefonen, vid den tid på dygnet du senast spelade ("The dungeon misses you."). Det är en lokal notis: inget går via någon server och inget skickas till oss. Stäng av den i iOS Inställningar → Notiser → Deep Regrats.</p>
 
 <h2 id="felrapporter">Felrapporter (bara betaversioner)</h2>
-<p>Betaversioner av spelet, som installeras via TestFlight, har en inbyggd felrapportering. Versionen i App Store har det inte: spelet frågar Apple vilken sorts installation det är och stänger av felrapporteringen. I en betaversion öppnar en volymknapp ett formulär för en rapport ovanpå spelet, och om du skakar telefonen visas listan med rapporter. Om, och bara om, du trycker på skicka går detta till vår tjänst för felrapporter (en databas och en serverfunktion hos Supabase):</p>
+<p>Betaversioner av spelet, som installeras via TestFlight, har en inbyggd felrapportering. Versionen i App Store har det inte: spelet frågar Apple vilken sorts installation det är och stänger av felrapporteringen. Installationer som App Review gör när spelet granskas räknas som betaversioner. I en betaversion öppnar en volymknapp ett formulär för en rapport ovanpå spelet, och om du skakar telefonen visas listan med rapporter. Om, och bara om, du trycker på skicka går detta till vår tjänst för felrapporter (en databas och en serverfunktion hos Supabase):</p>
 <ul>
 <li>det du skriver (rubrik, beskrivning, kommentarer) och namnet du väljer som rapportör;</li>
 <li>en skärmbild av spelet i just det ögonblicket, med det du ritat på den;</li>
@@ -114,15 +113,12 @@
 </ul>
 <p>Det används bara för att hitta och rätta felet. Skriv inga personuppgifter i en rapport.</p>
 
-<h2 id="anvandningsstatistik">Användningsstatistik (frivillig, kommer i en senare version)</h2>
-<p>Spelet samlar inte in någon användningsstatistik i dag. Om och när spelet frågar, och bara om du säger ja, skickas anonyma händelser, till exempel vilken våning du nådde och vilken färdighet du valde, till PostHog (EU, Frankfurt): fasta namn på händelserna, inga namn eller texter, inget reklam-id, sparas i 12 månader. Vi uppdaterar den här policyn innan det slås på.</p>
-
 <h2 id="kraschrapporter">Kraschrapporter</h2>
 <p>Inte än: spelet skickar inga egna kraschrapporter. Om du har slagit på "Dela med apputvecklare" i iOS Inställningar → Integritet och säkerhet → Analys och förbättringar kan Apple lämna anonyma kraschloggar till oss enligt Apples villkor. Du kan stänga av det där.</p>
 
 <h2 id="rattslig-grund">Rättslig grund (GDPR)</h2>
 <ul>
-<li><strong>Samtycke</strong> (artikel 6.1 a): anpassad reklam, mätning av reklam som kräver samtycke och reklam-id:t; och, om den någon gång startar, användningsstatistik. Du kan ta tillbaka samtycket när du vill som beskrivs ovan, utan att förlora något i spelet.</li>
+<li><strong>Samtycke</strong> (artikel 6.1 a): anpassad reklam, mätning av reklam som kräver samtycke och reklam-id:t. Du kan ta tillbaka samtycket när du vill som beskrivs ovan, utan att förlora något i spelet.</li>
 <li><strong>Berättigat intresse</strong> (artikel 6.1 f): att visa icke anpassad reklam så att spelet kan vara gratis, inklusive den IP-adress och de uppgifter om telefonen som Google behöver för att leverera en annons och stoppa fusk; och felrapporter från betaversioner, för att rätta spelet. Du kan invända (se dina rättigheter).</li>
 <li><strong>Avtal</strong> (artikel 6.1 b): att ge dig Ta bort reklam när du köpt det.</li>
 </ul>
@@ -132,7 +128,6 @@
 <li><strong>I telefonen:</strong> tills du tar bort spelet.</li>
 <li><strong>Reklamdata hos Google:</strong> enligt Googles villkor; vi har dem inte.</li>
 <li><strong>Felrapporter:</strong> medan felet hanteras, och de tas bort senast 12 månader efter att rapporten stängts. Säg till så tar vi bort dina tidigare.</li>
-<li><strong>Användningsstatistik</strong> (när den finns): 12 månader.</li>
 </ul>
 
 <h2 id="dina-rattigheter">Dina rättigheter</h2>
@@ -148,7 +143,7 @@
 <p>Deep Regrats riktar sig inte till barn under 13 år. Reklamen visas eller riktas inte annorlunda för barn, och vi samlar inte medvetet in personuppgifter om barn. Tror du att ett barn har skickat oss något, till exempel en felrapport, så hör av dig så raderar vi det.</p>
 
 <h2 id="overforing">Överföring utanför EU</h2>
-<p>Google kan behandla reklamdata i USA och i andra länder; Google stöder sig på EU–US Data Privacy Framework och EU:s standardavtalsklausuler. PostHog (när användningsstatistik finns) lagrar uppgifterna inom EU, i Frankfurt, enligt ett personuppgiftsbiträdesavtal. Supabase, som tar emot felrapporterna från betaversioner, behandlar dem för vår räkning enligt ett personuppgiftsbiträdesavtal och EU:s standardavtalsklausuler där uppgifter lämnar EU. Apple sköter Game Center och köp enligt sina egna villkor.</p>
+<p>Google kan behandla reklamdata i USA och i andra länder; Google stöder sig på EU–US Data Privacy Framework och EU:s standardavtalsklausuler. Supabase, som tar emot felrapporterna från betaversioner, behandlar dem för vår räkning enligt ett personuppgiftsbiträdesavtal och EU:s standardavtalsklausuler där uppgifter lämnar EU. Apple sköter Game Center och köp enligt sina egna villkor.</p>
 
 <h2 id="andringar">Ändringar</h2>
 <p>Om spelet börjar göra något nytt med uppgifter uppdateras den här policyn först och datumet överst ändras. Om en ändring spelar roll för dig säger vi det i spelet eller i uppdateringens beskrivning innan den gäller.</p>
