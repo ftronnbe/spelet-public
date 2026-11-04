@@ -10,13 +10,12 @@ Live: <https://ftronnbe.github.io/spelet-public/>
 |---|---|
 | Start page | https://ftronnbe.github.io/spelet-public/ |
 | Privacy policy (English) | https://ftronnbe.github.io/spelet-public/privacy.html |
-| Integritetspolicy (svenska) | https://ftronnbe.github.io/spelet-public/integritetspolicy.html |
 | app-ads.txt | https://ftronnbe.github.io/spelet-public/app-ads.txt |
 
 ## Files
 
 - `index.html`: the start page (hero with the archway, features, monsters, classes, Kevin, screenshots, FAQ).
-- `privacy.html`, `integritetspolicy.html`: the privacy policy. Keep the two in step; both carry the effective date.
+- `privacy.html`: the privacy policy (English only; the Swedish page was removed 2026-11-04). It carries the effective date.
 - `404.html`: self-contained, so it works from any path.
 - `app-ads.txt`: the AdMob seller line (see the caveat below).
 - `assets/css/style.css`, `assets/js/main.js`: all styling and motion. Everything respects `prefers-reduced-motion`.
@@ -47,7 +46,7 @@ minute or two.
 
 ## Changing the privacy policy
 
-Edit both `privacy.html` and `integritetspolicy.html`, change the date at the top ("Effective from" / "Gäller från"),
+Edit `privacy.html` and change the date at the top ("Effective from"),
 and keep the URLs stable: they are entered in App Store Connect and in AdMob. If the game starts collecting something
 new (usage statistics with PostHog, crash reports), update the policy **before** that version ships.
 
