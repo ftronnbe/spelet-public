@@ -23,8 +23,8 @@
 </header>
 <main class="legal" id="main">
 <h1>Privacy policy</h1>
-<p class="date">Effective from 28 October 2026.</p>
-<p>Deep Regrats is a game for iPhone. This policy says what the game stores, what it sends, to whom and why, and what you can do about it. The short version: your game is saved on your phone, with a copy in your own iCloud. Apple handles Game Center and purchases. Google shows the ads. We do not run any server that receives your game data, we do not have accounts, and we do not sell anything about you.</p>
+<p class="date">Effective from 4 November 2026.</p>
+<p>Deep Regrats is a game for iPhone. This policy says what the game stores, what it sends, to whom and why, and what you can do about it. The short version: your game is saved on your phone, with a copy in your own iCloud. Apple handles Game Center and purchases. Google shows the ads. We do not have accounts and we do not sell anything about you. The only thing that reaches a server of ours is what the reminder notifications need: an anonymous device code from Apple and when you last opened the game (see <a href="#notifications">The reminders</a>).</p>
 
 <nav class="toc" aria-label="Contents">
   <a href="#who-we-are">Who we are</a>
@@ -33,7 +33,7 @@
   <a href="#advertising">Advertising</a>
   <a href="#purchases">Remove Ads, purchases and refunds</a>
   <a href="#game-center">Game Center</a>
-  <a href="#notifications">The daily reminder</a>
+  <a href="#notifications">The reminders</a>
   <a href="#bug-reports">Bug reports (beta builds only)</a>
   <a href="#crash-reports">Crash reports</a>
   <a href="#legal-bases">Legal bases</a>
@@ -61,9 +61,10 @@
 <ul>
 <li><strong>Apple:</strong> Game Center (achievements and the Deepest Floor leaderboard), if you are signed in, and in-app purchases. See <a href="#game-center">Game Center</a> and <a href="#purchases">purchases</a>.</li>
 <li><strong>Google (AdMob):</strong> what is needed to show ads. See <a href="#advertising">Advertising</a>.</li>
+<li><strong>Apple and our reminder backend:</strong> only if you allow notifications: Apple's device code for the game, your time zone and when you last opened the game. See <a href="#notifications">The reminders</a>.</li>
 <li><strong>Our bug-report backend:</strong> only from beta builds (TestFlight), and only when you send a report yourself. App Store builds have no bug reporter. See <a href="#bug-reports">Bug reports</a>.</li>
 </ul>
-<p>Nothing else. There is no analytics or tracking SDK in the game apart from Google's advertising SDK, and the game has no server of its own that receives your game data.</p>
+<p>Nothing else. There is no analytics or tracking SDK in the game apart from Google's advertising SDK, and the only game data that reaches a server of ours is what the reminders need.</p>
 
 <h2 id="advertising">Advertising</h2>
 <p>The game is free and pays for itself with a few ads, shown by Google AdMob (Google Ireland Limited and Google LLC). There are two kinds:</p>
@@ -101,8 +102,10 @@
 <h2 id="game-center">Game Center</h2>
 <p>If you are signed in to Game Center on your iPhone, the game reports the achievements you unlock and the deepest floor you reach to Apple. Others may see your Game Center nickname and score on the Deepest Floor leaderboard, according to your Game Center settings. This is handled by Apple under <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's privacy policy</a>; we only see the leaderboard like any player. If you are not signed in, the game keeps achievements on your phone and sends nothing.</p>
 
-<h2 id="notifications">The daily reminder</h2>
-<p>After you have seen the dungeon, the game asks once whether it may send notifications. If you allow it, it schedules one reminder a day, on your phone, at the time of day you last played ("The dungeon misses you."). It is a local notification: nothing goes through a server and nothing is sent to us. Turn it off in iOS Settings → Notifications → Deep Regrats.</p>
+<h2 id="notifications">The reminders</h2>
+<p>After you have seen the dungeon, the game asks once whether it may send notifications. If you allow it, we may send you a reminder to come back: one about a day after you last opened the game, one after three days, and then one a week, at most six in all, and only between 09:00 and 21:00 your time. Opening the game starts the count again. The messages are short jokes about the dungeon, the same for everyone.</p>
+<p>To do that, the game sends our reminder backend the device code Apple gives it for notifications (a push token), your time zone (as an offset from UTC), when you last opened or left the game, and whether this is a test build or the App Store version. There is no name, account, save data or advertising identifier in it. The reminders are delivered through Apple Push Notification service. The backend runs on Supabase in Ireland, inside the EU.</p>
+<p>A device's record is deleted 90 days after you last opened the game, sooner if you turn notifications off in iOS and open the game, or if Apple tells us the code is no longer valid (for instance after you delete the game). Turn reminders off any time in iOS Settings → Notifications → Deep Regrats.</p>
 
 <h2 id="bug-reports">Bug reports (beta builds only)</h2>
 <p>Beta versions of the game, installed through TestFlight, have a built-in bug reporter. App Store versions do not: the game checks with Apple which kind of installation it is and switches the reporter off. Installs made by App Review during the review of the game count as beta builds. In a beta, pressing a volume button opens a report form over the game, and shaking the phone opens the list of reports. If, and only if, you press send, this goes to our bug-report backend (a database and server function hosted by Supabase):</p>
@@ -118,7 +121,7 @@
 
 <h2 id="legal-bases">Legal bases (GDPR)</h2>
 <ul>
-<li><strong>Consent</strong> (Article 6(1)(a)): personalised ads, ad measurement that needs consent, and the advertising identifier. You can withdraw it any time as described above, without losing anything in the game.</li>
+<li><strong>Consent</strong> (Article 6(1)(a)): personalised ads, ad measurement that needs consent, the advertising identifier, and the reminder notifications you allow in iOS. You can withdraw it any time as described above, without losing anything in the game.</li>
 <li><strong>Legitimate interest</strong> (Article 6(1)(f)): showing non-personalised ads to keep the game free, including the IP address and device information Google needs to deliver an ad and stop fraud; and bug reports from beta builds, to fix the game. You can object (see your rights).</li>
 <li><strong>Contract</strong> (Article 6(1)(b)): delivering Remove Ads once you have bought it.</li>
 </ul>
@@ -127,6 +130,7 @@
 <ul>
 <li><strong>On your phone:</strong> until you delete the game.</li>
 <li><strong>Ad data at Google:</strong> as set out in Google's policies; we do not hold it.</li>
+<li><strong>Reminders:</strong> a device's record is deleted 90 days after you last opened the game, and sooner if you turn notifications off in iOS and open the game, or if Apple tells us the device code is no longer valid.</li>
 <li><strong>Bug reports:</strong> while the issue is being handled, and deleted at the latest 12 months after the report is closed. Ask and we delete yours sooner.</li>
 </ul>
 
@@ -134,6 +138,7 @@
 <ul>
 <li><strong>Access, correction and deletion:</strong> ask us at the address below. Most of your data never reaches us: what is on your phone, you delete by deleting the game. For bug reports you sent, we can find and delete them if you tell us roughly when and what you wrote.</li>
 <li><strong>Withdraw consent:</strong> pause menu → REMOVE ADS → PRIVACY CHOICES for Google's consent message, and iOS Settings → Privacy &amp; Security → Tracking for the advertising identifier.</li>
+<li><strong>Reminders:</strong> turn them off in iOS Settings → Notifications → Deep Regrats; the game then asks our backend to forget the device code the next time you open it. We cannot tell who a device code belongs to, so for an earlier deletion tell us roughly when you last played and on which phone.</li>
 <li><strong>Object</strong> to processing based on legitimate interest, and ask for restriction or a copy of your data (portability).</li>
 <li><strong>Ad data:</strong> we cannot identify you in Google's ad data. Google's own tools at <a href="https://myadcenter.google.com" rel="noopener">myadcenter.google.com</a> and the settings above are the way to control it.</li>
 <li><strong>Complain:</strong> you can always turn to the Swedish Authority for Privacy Protection (IMY), <a href="https://www.imy.se" rel="noopener">imy.se</a>, or to the data protection authority where you live.</li>
@@ -143,7 +148,7 @@
 <p>Deep Regrats is not directed at children under 13. Ads are not shown or targeted differently for children, and we do not knowingly collect personal data from children. If you believe a child has sent us something, such as a bug report, contact us and we will delete it.</p>
 
 <h2 id="transfers">Transfers outside the EU</h2>
-<p>Google may process ad data in the USA and elsewhere; Google relies on the EU–US Data Privacy Framework and the EU's standard contractual clauses. Supabase, which hosts the beta bug reports, processes them for us under a data processing agreement and the EU's standard contractual clauses where data leaves the EU. Apple handles Game Center and purchases under its own terms.</p>
+<p>Google may process ad data in the USA and elsewhere; Google relies on the EU–US Data Privacy Framework and the EU's standard contractual clauses. Supabase, which hosts the beta bug reports and the reminder backend (in Ireland, inside the EU), processes them for us under a data processing agreement and the EU's standard contractual clauses where data leaves the EU. Apple handles Game Center, purchases and the delivery of notifications (Apple Push Notification service) under its own terms.</p>
 
 <h2 id="changes">Changes</h2>
 <p>If the game starts doing something new with data, this policy is updated first and the date at the top changes. If a change matters to you, we will say so in the game or in the update notes before it applies.</p>

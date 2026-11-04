@@ -23,8 +23,8 @@
 </header>
 <main class="legal" id="main">
 <h1>Integritetspolicy</h1>
-<p class="date">Gäller från 28 oktober 2026.</p>
-<p>Deep Regrats är ett spel för iPhone. Här står vad spelet sparar, vad det skickar, till vem och varför, och vad du kan göra åt det. Kort sagt: ditt spel sparas i din telefon, med en kopia i din egen iCloud. Apple sköter Game Center och köp. Google visar reklamen. Vi har ingen server som tar emot dina speldata, det finns inga konton och vi säljer ingenting om dig.</p>
+<p class="date">Gäller från 4 november 2026.</p>
+<p>Deep Regrats är ett spel för iPhone. Här står vad spelet sparar, vad det skickar, till vem och varför, och vad du kan göra åt det. Kort sagt: ditt spel sparas i din telefon, med en kopia i din egen iCloud. Apple sköter Game Center och köp. Google visar reklamen. Det finns inga konton och vi säljer ingenting om dig. Det enda som når en server hos oss är det som påminnelsenotiserna behöver: en anonym enhetskod från Apple och när du senast öppnade spelet (se <a href="#notiser">Påminnelserna</a>).</p>
 
 <nav class="toc" aria-label="Innehåll">
   <a href="#vilka-vi-ar">Vilka vi är</a>
@@ -33,7 +33,7 @@
   <a href="#reklam">Reklam</a>
   <a href="#kop">Ta bort reklam, köp och återbetalning</a>
   <a href="#game-center">Game Center</a>
-  <a href="#notiser">Den dagliga påminnelsen</a>
+  <a href="#notiser">Påminnelserna</a>
   <a href="#felrapporter">Felrapporter (bara betaversioner)</a>
   <a href="#kraschrapporter">Kraschrapporter</a>
   <a href="#rattslig-grund">Rättslig grund</a>
@@ -61,9 +61,10 @@
 <ul>
 <li><strong>Apple:</strong> Game Center (utmärkelser och topplistan Deepest Floor) om du är inloggad, och köp i appen. Se <a href="#game-center">Game Center</a> och <a href="#kop">köp</a>.</li>
 <li><strong>Google (AdMob):</strong> det som behövs för att visa reklam. Se <a href="#reklam">Reklam</a>.</li>
+<li><strong>Apple och vår tjänst för påminnelser:</strong> bara om du tillåter notiser: Apples enhetskod för spelet, din tidszon och när du senast öppnade spelet. Se <a href="#notiser">Påminnelserna</a>.</li>
 <li><strong>Vår tjänst för felrapporter:</strong> bara från betaversioner (TestFlight), och bara när du själv skickar en rapport. Versionen i App Store har ingen felrapportering. Se <a href="#felrapporter">Felrapporter</a>.</li>
 </ul>
-<p>Inget annat. Spelet har inga verktyg för analys eller spårning förutom Googles reklamverktyg, och ingen egen server som tar emot dina speldata.</p>
+<p>Inget annat. Spelet har inga verktyg för analys eller spårning förutom Googles reklamverktyg, och det enda speldata som når en server hos oss är det som påminnelserna behöver.</p>
 
 <h2 id="reklam">Reklam</h2>
 <p>Spelet är gratis och betalas av lite reklam, som visas av Google AdMob (Google Ireland Limited och Google LLC). Det finns två sorter:</p>
@@ -101,8 +102,10 @@
 <h2 id="game-center">Game Center</h2>
 <p>Om du är inloggad i Game Center på din iPhone rapporterar spelet de utmärkelser du låser upp och den djupaste våning du nått till Apple. Andra kan se ditt Game Center-smeknamn och resultat på topplistan Deepest Floor, beroende på dina inställningar i Game Center. Det sköts av Apple enligt <a href="https://www.apple.com/se/legal/privacy/" rel="noopener">Apples integritetspolicy</a>; vi ser bara topplistan som vilken spelare som helst. Är du inte inloggad sparar spelet utmärkelserna i telefonen och skickar ingenting.</p>
 
-<h2 id="notiser">Den dagliga påminnelsen</h2>
-<p>När du har sett grottan frågar spelet en gång om det får skicka notiser. Säger du ja schemalägger det en påminnelse om dagen, i telefonen, vid den tid på dygnet du senast spelade ("The dungeon misses you."). Det är en lokal notis: inget går via någon server och inget skickas till oss. Stäng av den i iOS Inställningar → Notiser → Deep Regrats.</p>
+<h2 id="notiser">Påminnelserna</h2>
+<p>När du har sett grottan frågar spelet en gång om det får skicka notiser. Säger du ja kan vi skicka en påminnelse om att komma tillbaka: en ungefär ett dygn efter att du senast öppnade spelet, en efter tre dagar och sedan en i veckan, högst sex totalt, och bara mellan 09:00 och 21:00 din tid. När du öppnar spelet börjar räkningen om. Meddelandena är korta skämt om grottan, likadana för alla.</p>
+<p>För att göra det skickar spelet till vår påminnelsetjänst den enhetskod Apple ger det för notiser (en push-token), din tidszon (som skillnad mot UTC), när du senast öppnade eller lämnade spelet och om det är en testversion eller versionen i App Store. Där finns inget namn, inget konto, ingen sparfil och inget reklam-id. Påminnelserna levereras via Apple Push Notification service. Tjänsten körs hos Supabase i Irland, inom EU.</p>
+<p>En enhets post tas bort 90 dagar efter att du senast öppnade spelet, tidigare om du stänger av notiser i iOS och öppnar spelet, eller om Apple meddelar att koden inte längre gäller (till exempel när du tagit bort spelet). Stäng av påminnelserna när du vill i iOS Inställningar → Notiser → Deep Regrats.</p>
 
 <h2 id="felrapporter">Felrapporter (bara betaversioner)</h2>
 <p>Betaversioner av spelet, som installeras via TestFlight, har en inbyggd felrapportering. Versionen i App Store har det inte: spelet frågar Apple vilken sorts installation det är och stänger av felrapporteringen. Installationer som App Review gör när spelet granskas räknas som betaversioner. I en betaversion öppnar en volymknapp ett formulär för en rapport ovanpå spelet, och om du skakar telefonen visas listan med rapporter. Om, och bara om, du trycker på skicka går detta till vår tjänst för felrapporter (en databas och en serverfunktion hos Supabase):</p>
@@ -118,7 +121,7 @@
 
 <h2 id="rattslig-grund">Rättslig grund (GDPR)</h2>
 <ul>
-<li><strong>Samtycke</strong> (artikel 6.1 a): anpassad reklam, mätning av reklam som kräver samtycke och reklam-id:t. Du kan ta tillbaka samtycket när du vill som beskrivs ovan, utan att förlora något i spelet.</li>
+<li><strong>Samtycke</strong> (artikel 6.1 a): anpassad reklam, mätning av reklam som kräver samtycke, reklam-id:t och de påminnelsenotiser du tillåter i iOS. Du kan ta tillbaka samtycket när du vill som beskrivs ovan, utan att förlora något i spelet.</li>
 <li><strong>Berättigat intresse</strong> (artikel 6.1 f): att visa icke anpassad reklam så att spelet kan vara gratis, inklusive den IP-adress och de uppgifter om telefonen som Google behöver för att leverera en annons och stoppa fusk; och felrapporter från betaversioner, för att rätta spelet. Du kan invända (se dina rättigheter).</li>
 <li><strong>Avtal</strong> (artikel 6.1 b): att ge dig Ta bort reklam när du köpt det.</li>
 </ul>
@@ -127,6 +130,7 @@
 <ul>
 <li><strong>I telefonen:</strong> tills du tar bort spelet.</li>
 <li><strong>Reklamdata hos Google:</strong> enligt Googles villkor; vi har dem inte.</li>
+<li><strong>Påminnelser:</strong> en enhets post tas bort 90 dagar efter att du senast öppnade spelet, och tidigare om du stänger av notiser i iOS och öppnar spelet, eller om Apple meddelar att enhetskoden inte längre gäller.</li>
 <li><strong>Felrapporter:</strong> medan felet hanteras, och de tas bort senast 12 månader efter att rapporten stängts. Säg till så tar vi bort dina tidigare.</li>
 </ul>
 
@@ -134,6 +138,7 @@
 <ul>
 <li><strong>Få veta, rätta och radera:</strong> fråga oss på adressen nedan. Det mesta av dina uppgifter når aldrig oss: det som finns i telefonen raderar du genom att ta bort spelet. Felrapporter du skickat kan vi hitta och radera om du berättar ungefär när och vad du skrev.</li>
 <li><strong>Ta tillbaka samtycke:</strong> pausmenyn → REMOVE ADS → PRIVACY CHOICES för Googles samtyckesmeddelande, och iOS Inställningar → Integritet och säkerhet → Spårning för reklam-id:t.</li>
+<li><strong>Påminnelser:</strong> stäng av dem i iOS Inställningar → Notiser → Deep Regrats; spelet ber då vår tjänst glömma enhetskoden nästa gång du öppnar det. Vi kan inte se vem en enhetskod tillhör, så för en tidigare radering: berätta ungefär när du senast spelade och på vilken telefon.</li>
 <li><strong>Invända</strong> mot behandling som bygger på berättigat intresse, och begära begränsning eller en kopia av dina uppgifter (dataportabilitet).</li>
 <li><strong>Reklamdata:</strong> vi kan inte peka ut dig i Googles reklamdata. Googles egna verktyg på <a href="https://myadcenter.google.com" rel="noopener">myadcenter.google.com</a> och inställningarna ovan är sättet att styra dem.</li>
 <li><strong>Klaga:</strong> du kan alltid vända dig till Integritetsskyddsmyndigheten (IMY), <a href="https://www.imy.se" rel="noopener">imy.se</a>, eller till dataskyddsmyndigheten i landet där du bor.</li>
@@ -143,7 +148,7 @@
 <p>Deep Regrats riktar sig inte till barn under 13 år. Reklamen visas eller riktas inte annorlunda för barn, och vi samlar inte medvetet in personuppgifter om barn. Tror du att ett barn har skickat oss något, till exempel en felrapport, så hör av dig så raderar vi det.</p>
 
 <h2 id="overforing">Överföring utanför EU</h2>
-<p>Google kan behandla reklamdata i USA och i andra länder; Google stöder sig på EU–US Data Privacy Framework och EU:s standardavtalsklausuler. Supabase, som tar emot felrapporterna från betaversioner, behandlar dem för vår räkning enligt ett personuppgiftsbiträdesavtal och EU:s standardavtalsklausuler där uppgifter lämnar EU. Apple sköter Game Center och köp enligt sina egna villkor.</p>
+<p>Google kan behandla reklamdata i USA och i andra länder; Google stöder sig på EU–US Data Privacy Framework och EU:s standardavtalsklausuler. Supabase, som tar emot felrapporterna från betaversioner och är värd för påminnelsetjänsten (i Irland, inom EU), behandlar dem för vår räkning enligt ett personuppgiftsbiträdesavtal och EU:s standardavtalsklausuler där uppgifter lämnar EU. Apple sköter Game Center, köp och leveransen av notiser (Apple Push Notification service) enligt sina egna villkor.</p>
 
 <h2 id="andringar">Ändringar</h2>
 <p>Om spelet börjar göra något nytt med uppgifter uppdateras den här policyn först och datumet överst ändras. Om en ändring spelar roll för dig säger vi det i spelet eller i uppdateringens beskrivning innan den gäller.</p>
